@@ -1,0 +1,20 @@
+version: "3"
+services:
+  wordpress:
+    image: my_wordpress
+    ports:
+      - "80:80"
+    restart: always
+    environment:
+      MY_DB_HOST: db
+      MY_DB_USER: wp_user
+      MY_DB_PASSWORD: Testpassword@123
+      MY_DB_NAME: wp
+  db:
+    image: mysql-image
+    ports:
+      - "3306:3306"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: Piyush@123
+
